@@ -212,7 +212,7 @@ st.markdown("""
 st.markdown("""
 <div class="main-header">
     <div style="font-size: 3rem; margin-bottom: 0.5rem;">🎓</div>
-    <h1>SKCET Knowledge Assistant</h1>
+    <h1>SKCET RAG Assistant</h1>
     <p>Sri Krishna College of Engineering and Technology</p>
 </div>
 """, unsafe_allow_html=True)
