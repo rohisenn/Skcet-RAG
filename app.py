@@ -1,3 +1,6 @@
+import warnings
+warnings.filterwarnings('ignore')
+
 import streamlit as st
 from src.embeddings import get_embedding_model
 from src.vector_store import load_vector_store
