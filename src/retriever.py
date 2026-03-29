@@ -1,7 +1,7 @@
 import os
 from langchain_community.retrievers import BM25Retriever
 
-def get_retriever(vectordb, documents=None, k=5):
+def get_retriever(vectordb, documents=None, k=10):
 
     vector_retriever = vectordb.as_retriever(
         search_type="similarity",

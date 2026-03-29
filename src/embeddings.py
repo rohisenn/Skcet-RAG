@@ -7,18 +7,21 @@
    # )
 from fastembed import TextEmbedding
 from typing import List
+import numpy as np
 
 class FastEmbedWrapper:
     def __init__(self):
         self.model = TextEmbedding(
-            model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+            model_name="BAAI/bge-small-en-v1.5"
         )
 
     def embed_documents(self, texts: List[str]) -> List[List[float]]:
-        return [list(vec) for vec in self.model.embed(texts)]
+        embeddings = list(self.model.embed(texts))
+        return [[float(x) for x in emb] for emb in embeddings]
 
     def embed_query(self, text: str) -> List[float]:
-        return list(next(self.model.embed([text])))
+        embedding = list(next(self.model.embed([text])))
+        return [float(x) for x in embedding]
 
 
 def get_embedding_model():
